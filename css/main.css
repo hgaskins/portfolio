@@ -1,0 +1,43 @@
+body {
+  padding: 1em;
+}
+
+main {
+  margin: auto;
+  width: 80%;
+}
+
+address {
+  display: inline-block;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+article {
+    padding: 10px;
+}
+
+.container {
+    max-width: 60em;
+}
+
+.template {
+  display: none;
+}
+
+.draft {
+  display: none;
+}
+
+.byline {
+  color: #777;
+}
+
+.byline a {
+  font-weight: bold;
+  text-decoration: none;
+  color: inherit;
+}
