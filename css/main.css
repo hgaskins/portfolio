@@ -1,4 +1,6 @@
-
+body {
+    margin-bottom: 100px;
+}
 main {
   margin: auto;
   /*width: 80%;*/
@@ -17,6 +19,11 @@ article {
     padding: 10px;
 }
 
+.interestsIcons{
+    list-style: none;
+    display:flex;
+    padding: 10px;
+}
 
 
 .container {
