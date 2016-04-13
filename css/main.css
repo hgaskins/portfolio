@@ -1,7 +1,6 @@
 body {
-  padding: 1em;
+    margin-bottom: 100px;
 }
-
 main {
   margin: auto;
   /*width: 80%;*/
@@ -19,6 +18,13 @@ img {
 article {
     padding: 10px;
 }
+
+.interestsIcons{
+    list-style: none;
+    display:flex;
+    padding: 10px;
+}
+
 
 .container {
     width: 90%;

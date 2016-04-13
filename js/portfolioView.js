@@ -1,19 +1,13 @@
-//view object to hold functions for dynamic updates
-var portfolioView = {};
+//refactored code to implement delegation 
 
-portfolioView.handleMainNav = function() {
-    $('.main-nav').on('click', function() {
-        $('li.portfolioLink').click(function() {
-            $('#about').hide();
-            $('#projects').show();
-        });
-        $('li.aboutLink').click(function() {
-            $('#about').show();
-            $('#projects').hide();
-        });
-    });
-};
+var $ul = $('ul.dropdown-menu');
 
-$(document).ready(function() {
-    portfolioView.handleMainNav();
-})
+$ul.on('click', 'li', function() {
+    if ($(this)[0].className == 'portfolioLink') {
+        $('#about').hide();
+        $('#projects').show();
+    } else if ($(this)[0].className == 'aboutLink') {
+        $('#about').show();
+        $('#projects').hide();
+    };
+});

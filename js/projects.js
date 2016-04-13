@@ -1,29 +1,38 @@
 var rawData = [
     {
         title:          'Spot a Salmon',
-        tagline:        'tagtest',
-        description:    '<p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula,                eget lacinia odio sem nec elit. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>',
-        imgSRC:         'img/jekyll.png',
-        category:       'website category',
-        urlToSite:      'https://twitter.com/hannahgaskins',
-        publishedOn:    '2015-10-18'
+        tagline:        'CodeFellows 201 Final Project',
+        description:    '<p>This was a group project that involved compenents  including: Local Storage, SVG animations, compenents that accept and process user input, deployed using gh-pages, canvas elements using Highcharts.js, and collaborative coding.</p>',
+        imgSRC:         'img/spotASalmon.png',
+        category:       'website',
+        urlToSite:      'http://katesowles.github.io/201_final/',
+        publishedOn:    '2016-04-12'
     },
     {
-        title:          'test title 2',
-        tagline:        'tagtest 2',
-        description:    '<p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec id elit non mi porta gravida at eget metus. Donec sed odio dui. Curabitur blandit tempus porttitor.</p>',
-        imgSRC:         'img/portland.png',
-        category:       'website category 2',
-        urlToSite:      'https://twitter.com/hannahgaskins',
+        title:          'BusMall',
+        tagline:        'CodeFellows Individual Project',
+        description:    '<p>This was a solo project that utilized CSS annimations, Skeleton as a base framework, Charts.js to display data visually, local storage, event listeners, and basic Javascript development.</p>',
+        imgSRC:         'img/busmal.png',
+        category:       'website',
+        urlToSite:      'http://hnag409.github.io/bus-mall/home.html',
         publishedOn:     '2016-03-18'
     },
     {
-        title:          'test title 3',
-        tagline:        'tagtest 3',
-        description:    '<p>Aenean lacinia bibendum nulla sed consectetur. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas faucibus mollis interdum. Donec id elit non mi porta gravida at eget metus. Curabitur blandit tempus porttitor.</p>',
-        imgSRC:         'img/wine.png',
+        title:          'MGMDOCS.com',
+        tagline:        'Freelance Work',
+        description:    '<p>This was a project for a small venture real estate company in San Diego to create forms for users to access. The client wanted something easy to use, password protected, and with a good aesthetic. I choose to use a Squarespace site which fit the clients needs well. </p>',
+        imgSRC:         'img/MGMTDOCS.png',
         category:       'website category 3',
-        urlToSite:      'https://twitter.com/hannahgaskins',
-        publishedOn:     '2016-03-20'
+        urlToSite:      'http://MGMTDOCS.com',
+        publishedOn:     '2016-01-20'
+    },
+    {
+        title:          'TGPVentures',
+        tagline:        'Freelance Work',
+        description:    '',
+        imgSRC:         'img/TGPVentures.png',
+        category:       'website',
+        urlToSite:      'http://tgpventures.com',
+        publishedOn:    '2015-04-30'
     }
 ];
