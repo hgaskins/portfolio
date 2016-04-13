@@ -6,3 +6,7 @@
 
 * As a visitor, I want the site to be responsive, so that I can read it on any device.
 * As a visitor, I want the portfolio to show the newest projects on top so that I can easily see the developers recent work.
+
+* As the creator, I want the Home and About nav links to act as tabs, so my story is revealed FAST.
+
+* As a reader, I want the portfolio to use a nice color scheme, so that it stands out visually.

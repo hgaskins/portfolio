@@ -20,7 +20,7 @@
   </head>
   <body>
         <!-- ============= navigation ================== -->
-        <nav class="navbar navbar-default">
+        <nav class="navbar navbar-default main-nav">
           <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -30,22 +30,20 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="index.html">Hannah Logo</a>
+              <a class="navbar-brand" href="index.html">Hannah Gaskins</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav">
                   <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Menu <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                      <li><a href="#">Action</a></li>
-                      <li><a href="#">Another action</a></li>
-                      <li><a href="#">Something else here</a></li>
+                      <li class="portfolioLink"><a href="#toPortfolio">Portfolio</a></li>
+                      <li class="aboutLink"><a href="#toAbout">About</a></li>
                       <li role="separator" class="divider"></li>
-                      <li><a href="#">Separated link</a></li>
-                      <li role="separator" class="divider"></li>
-                      <li><a href="#">One more separated link</a></li>
+                      <!-- Add Contact if time -->
+                      <!-- <li><a href="#toContact">Contact</a></li> -->
                     </ul>
                   </li>
               </ul>
@@ -58,39 +56,69 @@
           </div><!-- /.container-fluid -->
         </nav>
         <!-- ============= html section ================== -->
-        <section id="projects">
-            <article class="template" data-category="cat">
-              <header>
-                <a href="#"><h1></h1></a>
-                <h3></h3>
-                <img src="" alt=""/>
-                <div class="byline">
-                  Link <address><a href="#">Project Name</a></address>
-                </div>
-              </header>
-              <section class="projectDescription"></section>
-            </article>
-        </section>
-        <!-- test -->
         <div class="container">
             <div class="row">
-                <div class="col-sm-4">
-                    One of three columns
-                </div>
-                <div class="col-sm-4">
-                    One of three columns
-                </div>
-                <div class="col-sm-4">
-                    One of three columns
-                </div>
+                <section id="projects">
+                    <article class="template col-md-6" data-category="cat">
+                      <header>
+                        <a href="#"><h1></h1></a>
+                        <h3></h3>
+                        <img src="" alt=""/>
+                        <div class="byline">
+                          Link <address><a href="#">Project Name</a></address>
+                        </div>
+                      </header>
+                      <section class="projectDescription"></section>
+                    </article>
+                </section>
+            </div>
+        </div>
+        <!-- ============= about section ================== -->
+        <div class="container">
+            <div class="row">
+                <section id="about" class="tab-content col-md-10">
+                    <section>
+                      <h1>About:</h1>
+                      <p>
+                          Motivated, self-starting,
+                          tech-loving, learner. Looking
+                          to make a positive impact on all
+                          projects and people I encounter.
+                          Engaged problem solver
+                          and communicator - both sides
+                          of my brain get regular use.
+                          Excited to start my next adventure
+                          and contribute to projects,
+                          collaborations, teams, and all
+                          around good vibes.
+                      </p>
+                      <ul>
+                        <li>Coding</li>
+                        <li>Yoga</li>
+                        <li>Cats and Dogs</li>
+                        <li>People too</li>
+                      </ul>
+                    </section>
+                </section>
+            </div>
+        </div>
+
+        <!-- ============= footer ================== -->
+        <div class="navbar navbar-inverse">
+            <div class="container">
+                <p>
+                    Site Built by Hannah Gaskins
+                </p>
             </div>
         </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
+
     <script type="text/javascript" src="js/projects.js"></script>
     <script type="text/javascript" src="js/projectsTemplate.js"></script>
+    <script src="js/portfolioView.js" ></script>
     <script src="js/bootstrap.min.js"></script>
   </body>
 </html>
