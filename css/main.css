@@ -1,6 +1,6 @@
-body {
+/*body {
   padding: 1em;
-}
+}*/
 
 main {
   margin: auto;
@@ -19,6 +19,8 @@ img {
 article {
     padding: 10px;
 }
+
+
 
 .container {
     width: 90%;
