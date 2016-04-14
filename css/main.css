@@ -2,6 +2,7 @@ body {
     margin-bottom: 100px;
     font-family: "brandon-grotesque";
 }
+
 main {
   margin: auto;
   /*width: 80%;*/
@@ -20,9 +21,6 @@ article {
     padding: 10px;
 }
 
-a:hover {
-    text-decoration: none;
-}
 
 .interestsIcons{
     list-style: none;

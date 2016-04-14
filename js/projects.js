@@ -11,7 +11,7 @@ var rawData = [
     {
         title:          'BusMall',
         tagline:        'CodeFellows Individual Project',
-        description:    '<p>This was a solo project that utilized CSS annimations, Skeleton as a base framework, Charts.js to display data visually, local storage, event listeners, and basic Javascript development.</p>',
+        description:    '<p>This was a solo project that utilized CSS animations, Skeleton as a base framework, Charts.js to display data visually, local storage, event listeners, and basic Javascript development.</p>',
         imgSRC:         'img/busmal.png',
         category:       'website',
         urlToSite:      'http://hnag409.github.io/bus-mall/home.html',
