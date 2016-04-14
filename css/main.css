@@ -1,5 +1,6 @@
 body {
     margin-bottom: 100px;
+    font-family: "brandon-grotesque";
 }
 main {
   margin: auto;
@@ -17,6 +18,10 @@ img {
 
 article {
     padding: 10px;
+}
+
+a:hover {
+    text-decoration: none;
 }
 
 .interestsIcons{
