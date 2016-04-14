@@ -3,7 +3,7 @@ var rawData = [
         title:          'Spot a Salmon',
         tagline:        'CodeFellows 201 Final Project',
         description:    '<p>This was a group project that involved compenents  including: Local Storage, SVG animations, compenents that accept and process user input, deployed using gh-pages, canvas elements using Highcharts.js, and collaborative coding.</p>',
-        imgSRC:         'img/spotASalmon.png',
+        imgSRC:         'img/SpotASalmon.png',
         category:       'website',
         urlToSite:      'http://katesowles.github.io/201_final/',
         publishedOn:    '2016-04-12'
