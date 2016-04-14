@@ -21,27 +21,6 @@ article {
     padding: 10px;
 }
 
-h1 {
-    font-weight: 300;
-    letter-spacing: .05em;
-    text-transform: uppercase;
-}
-
-h3 {
-    font-weight: 300;
-    letter-spacing: .02em;
-}
-
-p {
-    font-weight: 300;
-    letter-spacing: .06em;
-    font-size: 1.3em;
-    text-align: justify;
-}
-
-a:hover {
-    text-decoration: none;
-}
 
 .interestsIcons{
     list-style: none;
