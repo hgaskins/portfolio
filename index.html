@@ -21,6 +21,23 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+    <script id="portfolioTemplate" type="text/x-handlebars-template">
+
+      <article class="col-md-4" data-category="cat">
+        <header>
+          <a href="#"><h1>{{title}}</h1></a>
+          <h3>{{tagline}}</h3>
+          <img src="{{imgSRC}}" alt=""/>
+          <div class="byline">
+            Link <address><a href="{{urlToSite}}">To Site</a></address>
+          </div>
+        </header>
+        <section class="projectDescription">{{{description}}}</section>
+      </article>
+
+    </script>
+
   </head>
   <body>
         <!-- ============= navigation ================== -->
@@ -60,23 +77,14 @@
           </div><!-- /.container-fluid -->
         </nav>
         <!-- ============= html section ================== -->
+
+
         <div class="container">
             <div class="row">
-                <section id="projects">
-                    <article class="template col-md-4" data-category="cat">
-                      <header>
-                        <a href="#"><h1></h1></a>
-                        <h3></h3>
-                        <img src="" alt=""/>
-                        <div class="byline">
-                          Link <address><a href="#">To Site</a></address>
-                        </div>
-                      </header>
-                      <section class="projectDescription"></section>
-                    </article>
-                </section>
+                <section id="projects"></section>
             </div>
         </div>
+
         <!-- ============= about section ================== -->
         <div class="container">
             <div class="row">
@@ -121,7 +129,7 @@
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
     <script type="text/javascript" src="js/projects.js"></script>
     <script type="text/javascript" src="js/projectsTemplate.js"></script>
     <script src="js/portfolioView.js" ></script>

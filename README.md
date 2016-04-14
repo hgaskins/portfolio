@@ -1,7 +1,7 @@
 portfolio
 =========
 
-This is a portfolio project that will make use of Jquery objects, dynamic display, responsive design through bootstrap and more. Each day adding onto the next.
+This is a portfolio project that will make use of jQuery objects, dynamic display, responsive design through bootstrap and more. Each day adding onto the next.
 
 Day 1
 -----
@@ -24,3 +24,8 @@ Day 3
 * As a visitor, I want the viewport properly sized, so that content fits all the size I have available.
 * As a visitor, I want the primary nav to be responsive, so that I can get around using any device.
 * As a visitor, I want to see projects one per row on mobile, so that I can read the detail easily.
+
+Day 4
+-----
+* As a developer, I want to use Handlebars for my project template, so that I can include new projects more easily.
+* As a developer, I want my CSS styles to follow SMACSS organization, so that I know where to look for creating and editing styles.
