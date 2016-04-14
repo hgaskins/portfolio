@@ -1,0 +1,22 @@
+body {
+    margin-bottom: 100px;
+    font-family: "brandon-grotesque";
+}
+
+main {
+  margin: auto;
+  /*width: 80%;*/
+}
+
+address {
+  display: inline-block;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+article {
+    padding: 10px;
+}
