@@ -14,25 +14,6 @@ Project.prototype.toHtml = function() {
   var source = $('#portfolioTemplate').html();
   var template = Handlebars.compile(source);
 
-  // var $newProject = $('article.template').clone();
-  //
-  // $newProject.find('h1').html(this.title);
-  //
-  // $newProject.find('h3').html(this.tagline);
-  //
-  // $newProject.find('.projectDescription').html(this.description);
-  //
-  // //for img
-  // $newProject.find('img').attr('src', this.imgSRC);
-  // $newProject.find('alt').attr('src', this.title);
-  //
-  // $newProject.attr('data-category', this.category);
-  //
-  // $newProject.find('.byline a').attr('href', this.urlToSite);
-  //
-  // $newProject.removeClass('template');
-  //
-  // return $newProject;
   return template(this);
 
 };
@@ -45,9 +26,9 @@ rawData.sort(function(a,b) {
 //function that fills the array
 rawData.forEach(function(ele) {
   projects.push(new Project(ele));
-})
+});
 
 //function that loops through the array to past to the html
 projects.forEach(function(a){
-  $('#projects').append(a.toHtml())
+  $('#projects').append(a.toHtml());
 });
