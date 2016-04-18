@@ -17,21 +17,37 @@ Project.prototype.toHtml = function() {
 
 };
 
-//sorts posts based on date - newest first
-rawData.sort(function(a,b) {
-  return (new Date(b.publishedOn)) - (new Date(a.publishedOn));
-});
+//wrapping rawData.sort and rawData.forEach
+Project.loadAll = function(rawData) {
+  //sorts posts based on date - newest first
+  rawData.sort(function(a,b) {
+    return (new Date(b.publishedOn)) - (new Date(a.publishedOn));
+  });
+  //function that fills the array
+  rawData.forEach(function(ele) {
+    projects.push(new Project(ele));
 
-//function that fills the array
-rawData.forEach(function(ele) {
-  projects.push(new Project(ele));
-});
+  });
+};
 
-//function that loops through the array to past to the html
-projects.forEach(function(a){
-  $('#projects').append(a.toHtml());
-});
 
-//getJSON to test
-var getJSON = jQuery.getJSON('../data/data.json');
-console.log(getJSON);
+Project.fetchAll = function() {
+  var getJSONObj = $.getJSON('../data/data.json', function(data) {
+    console.log('poopyButts');
+    Project.loadAll(data);
+    projects.forEach(function(a){
+      $('#projects').append(a.toHtml());
+    });
+  });
+};
+
+
+
+// //function that loops through the array to paste to the html
+// projects.forEach(function(a){
+//   $('#projects').append(a.toHtml());
+// });
+//
+// //getJSON to test
+// var getJSON = jQuery.getJSON('../data/data.json');
+// console.log(getJSON);
