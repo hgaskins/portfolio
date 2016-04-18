@@ -33,7 +33,6 @@ Project.loadAll = function(rawData) {
 
 Project.fetchAll = function() {
   var getJSONObj = $.getJSON('../data/data.json', function(data) {
-    console.log('poopyButts');
     Project.loadAll(data);
     projects.forEach(function(a){
       $('#projects').append(a.toHtml());
