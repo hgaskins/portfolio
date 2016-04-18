@@ -3,9 +3,8 @@ var projects = [];
 
 //constructor function that creates new article/html element for each project
 function Project (opts) {
-
   for (key in opts) this[key] = opts[key];
-}
+};
 
 //function that creates JQ objects with methods using html elements within constructor function
 Project.prototype.toHtml = function() {
@@ -17,6 +16,8 @@ Project.prototype.toHtml = function() {
   return template(this);
 
 };
+
+
 
 //sorts posts based on date - newest first
 rawData.sort(function(a,b) {
@@ -32,3 +33,7 @@ rawData.forEach(function(ele) {
 projects.forEach(function(a){
   $('#projects').append(a.toHtml());
 });
+
+//getJSON to test 
+var getJSON = jQuery.getJSON('../data/data.json');
+console.log(getJSON);
