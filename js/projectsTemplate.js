@@ -17,8 +17,6 @@ Project.prototype.toHtml = function() {
 
 };
 
-
-
 //sorts posts based on date - newest first
 rawData.sort(function(a,b) {
   return (new Date(b.publishedOn)) - (new Date(a.publishedOn));
@@ -34,6 +32,6 @@ projects.forEach(function(a){
   $('#projects').append(a.toHtml());
 });
 
-//getJSON to test 
+//getJSON to test
 var getJSON = jQuery.getJSON('../data/data.json');
 console.log(getJSON);
