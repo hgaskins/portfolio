@@ -34,19 +34,12 @@ Project.loadAll = function(rawData) {
 Project.fetchAll = function() {
   var getJSONObj = $.getJSON('../data/data.json', function(data) {
     Project.loadAll(data);
+    //function that loops through the array to paste to the html
     projects.forEach(function(a){
       $('#projects').append(a.toHtml());
     });
   });
 };
 
-
-
-// //function that loops through the array to paste to the html
-// projects.forEach(function(a){
-//   $('#projects').append(a.toHtml());
-// });
-//
-// //getJSON to test
-// var getJSON = jQuery.getJSON('../data/data.json');
-// console.log(getJSON);
+// calling the function
+Project.fetchAll();
