@@ -28,7 +28,7 @@
   //wrapping rawData.sort and rawData.forEach
   Project.loadAll = function(rawData) {
     //sorts posts based on date - newest first
-    rawData.sort(function(a,b) {
+    rawData.reduce(function(a,b) {
       return (new Date(b.publishedOn)) - (new Date(a.publishedOn));
     });
     // //REFACORTED TO INCLUDE .MAP
