@@ -1,45 +1,71 @@
-//empty array for rawData to push to
-var projects = [];
 
-//constructor function that creates new article/html element for each project
-function Project (opts) {
-  for (key in opts) this[key] = opts[key];
-};
+(function(module) {
+  //constructor function that creates new article/html element for each project
+  function Project (opts) {
+    this.title = opts.title;
+    this.tagline = opts.tagline;
+    this.description = opts.description;
+    this.imgSRC = opts.imgSRC;
+    this.category = opts.category;
+    this.urlToSite = opts.urlToSite;
+    this.publishedOn = opts.publishedOn;
+  };
 
-//function that creates JQ objects with methods using html elements within constructor function
-Project.prototype.toHtml = function() {
+  //empty array for rawData to push to
+  Project.all = [];
 
-  //using Handlebars to render templates
-  var source = $('#portfolioTemplate').html();
-  var template = Handlebars.compile(source);
+  //function that creates JQ objects with methods using html elements within constructor function
+  Project.prototype.toHtml = function() {
 
-  return template(this);
+    //using Handlebars to render templates
+    var source = $('#portfolioTemplate').html();
+    var template = Handlebars.compile(source);
 
-};
+    return template(this);
 
-//wrapping rawData.sort and rawData.forEach
-Project.loadAll = function(rawData) {
-  //sorts posts based on date - newest first
-  rawData.sort(function(a,b) {
-    return (new Date(b.publishedOn)) - (new Date(a.publishedOn));
-  });
-  //function that fills the array
-  rawData.forEach(function(ele) {
-    projects.push(new Project(ele));
+  };
 
-  });
-};
+  //wrapping rawData.sort and rawData.forEach
+  Project.loadAll = function(rawData) {
+    //sorts posts based on date - newest first
+    rawData.reduce(function(a,b) {
+      return (new Date(b.publishedOn)) - (new Date(a.publishedOn));
+    });
+    // //REFACORTED TO INCLUDE .MAP
+    // //function that fills the array
+    // rawData.forEach(function(ele) {
+    //   Project.all.push(new Project(ele));
+    // });
+    Project.all = rawData.map(function(item) {
+      return new Project(item);
+    });
+
+  };
 
 
-Project.fetchAll = function() {
-  var getJSONObj = $.getJSON('../data/data.json', function(data) {
-    Project.loadAll(data);
+  Project.fetchAll = function(fetchAllCallback) {
+    if (localStorage.portfolioData) {
+      Project.loadAll(JSON.parse(localStorage.portfolioData));
+      fetchAllCallback();
+    } else {
+      $.getJSON('../data/data.json', function(portfolioData) {
+        Project.loadAll(portfolioData);
+        localStorage.portfolioData = JSON.stringify(portfolioData);
+        fetchAllCallback();
+      });
+    }
+  };
+
+  Project.initIndexPage = function() {
     //function that loops through the array to paste to the html
-    projects.forEach(function(a){
+    Project.all.forEach(function(a) {
       $('#projects').append(a.toHtml());
     });
-  });
-};
+  };
 
-// calling the function
-Project.fetchAll();
+
+  // // calling the function
+  // Project.fetchAll();
+
+  module.Project = Project;
+}) (window);
