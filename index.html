@@ -129,9 +129,13 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
-    <script type="text/javascript" src="js/projects.js"></script>
+    <!-- <script type="text/javascript" src="js/projects.js"></script> -->
     <script type="text/javascript" src="js/projectsTemplate.js"></script>
     <script src="js/portfolioView.js" ></script>
     <script src="js/bootstrap.min.js"></script>
+    <script>
+      // calling the function
+      Project.fetchAll(Project.initIndexPage);
+    </script>
   </body>
 </html>
