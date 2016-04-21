@@ -25,6 +25,57 @@
 
   };
 
+ // +++++++++++++++++ fizzbuzz+++++++++++++++++++
+
+ //object literals to set for types of fizzbuzzes
+
+ //classic to be used with second button
+  var classic = {
+    fizz: 'FIZZ',
+    buzz: 'BUZZ'
+  };
+
+  var emoji = {
+    fizz: '🍾 ',
+    buzz: '🌩'
+  };
+  var obj = emoji;
+  var f = obj.fizz;
+  var b = obj.buzz;
+
+ //function generating string based on external context
+  function appendToPage(callback) {
+    $('#results').append(callback);
+  }
+  var fizzBuzzLogic = function(num) {
+    var stringToPrint;
+    for (var i = 1; i < num; i++) {
+      if (i % 3 === 0 && i % 5 === 0) {
+        stringToPrint += f+b;
+      } else if (i % 3 === 0) {
+        stringToPrint += f;
+      } else if (i % 5 === 0) {
+        stringToPrint += b;
+      } else {
+        stringToPrint += (' ' + i + ' ');
+      };
+    };
+    return function(heresWhat) {
+      var message = 'Let\'s do it!' + heresWhat + stringToPrint;
+      return message;
+    };
+  };
+
+  $('#action').on('click', function(){
+    console.log('🏟');
+    obj = emoji;
+    appendToPage(fizzBuzzLogic(50)('Here\'s emoji fizzbuzz:'));
+  });
+
+  //add in second button for fizzbuzz classic
+
+
+
   //wrapping rawData.sort and rawData.forEach
   Project.loadAll = function(rawData) {
     //sorts posts based on date - newest first
