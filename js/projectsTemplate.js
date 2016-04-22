@@ -25,7 +25,7 @@
 
   };
 
- // +++++++++++++++++ fizzbuzz+++++++++++++++++++
+ // +++++++++++++++++ fizzbuzz +++++++++++++++++++
 
  //object literals to set for types of fizzbuzzes
 
@@ -39,15 +39,31 @@
     fizz: ' 🍾 ',
     buzz: ' 🌩 '
   };
-  var obj = emoji;
-  var f = obj.fizz;
-  var b = obj.buzz;
+  var obj = [];
 
+
+  $('#action').on('click', function(){
+    obj = emoji;
+    f = emoji.fizz;
+    b = emoji.buzz;
+    //calling a function that is passed as a parameter
+    appendToPage(fizzBuzzLogic(50)('Here\'s emoji fizzbuzz: '));
+  });
+
+
+  $('#actionTwo').on('click', function(){
+    console.log('🍋');
+    obj = classic;
+    f = classic.fizz;
+    b = classic.buzz;
+    appendToPage(fizzBuzzLogic(30)('Here\'s emoji fizzbuzz: '));
+  });
+
+  //
   function appendToPage(callback) {
     $('#results').append(callback);
-  }
+  };
   //function generating string based on external context
-
   var fizzBuzzLogic = function(num) {
     var stringToPrint;
     for (var i = 1; i < num; i++) {
@@ -61,25 +77,12 @@
         stringToPrint += (' ' + i + ' ');
       };
     };
+    //function that is used in appendToPage and passed as a param
     return function(heresWhat) {
       var message = 'Let\'s do it! ' + heresWhat + stringToPrint;
       return message;
     };
   };
-
-  $('#action').on('click', function(){
-    console.log('🏟');
-    obj = emoji;
-    appendToPage(fizzBuzzLogic(50)('Here\'s emoji fizzbuzz: '));
-  });
-
-  //add in second button for fizzbuzz classic with different num and heresWhat
-  // $('#actionTwo').on('click', function(){
-  //   console.log('🍋');
-  //   obj = emoji;
-  //   appendToPage(fizzBuzzLogic(30)('Here\'s emoji fizzbuzz: '));
-  // });
-
 
   //wrapping rawData.sort and rawData.forEach
   Project.loadAll = function(rawData) {
