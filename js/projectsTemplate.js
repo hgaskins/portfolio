@@ -1,53 +1,122 @@
-//empty array for rawData to push to
-var projects = [];
 
-//constructor function that creates new article/html element for each project
-function Project (opts) {
+(function(module) {
+  //constructor function that creates new article/html element for each project
+  function Project (opts) {
+    this.title = opts.title;
+    this.tagline = opts.tagline;
+    this.description = opts.description;
+    this.imgSRC = opts.imgSRC;
+    this.category = opts.category;
+    this.urlToSite = opts.urlToSite;
+    this.publishedOn = opts.publishedOn;
+  };
 
-  for (key in opts) this[key] = opts[key];
-}
+  //empty array for rawData to push to
+  Project.all = [];
 
-//function that creates JQ objects with methods using html elements within constructor function
-Project.prototype.toHtml = function() {
+  //function that creates JQ objects with methods using html elements within constructor function
+  Project.prototype.toHtml = function() {
 
-  //using Handlebars to render templates
-  var source = $('#portfolioTemplate').html();
-  var template = Handlebars.compile(source);
+    //using Handlebars to render templates
+    var source = $('#portfolioTemplate').html();
+    var template = Handlebars.compile(source);
 
-  // var $newProject = $('article.template').clone();
-  //
-  // $newProject.find('h1').html(this.title);
-  //
-  // $newProject.find('h3').html(this.tagline);
-  //
-  // $newProject.find('.projectDescription').html(this.description);
-  //
-  // //for img
-  // $newProject.find('img').attr('src', this.imgSRC);
-  // $newProject.find('alt').attr('src', this.title);
-  //
-  // $newProject.attr('data-category', this.category);
-  //
-  // $newProject.find('.byline a').attr('href', this.urlToSite);
-  //
-  // $newProject.removeClass('template');
-  //
-  // return $newProject;
-  return template(this);
+    return template(this);
 
-};
+  };
 
-//sorts posts based on date - newest first
-rawData.sort(function(a,b) {
-  return (new Date(b.publishedOn)) - (new Date(a.publishedOn));
-});
+ // +++++++++++++++++ fizzbuzz+++++++++++++++++++
 
-//function that fills the array
-rawData.forEach(function(ele) {
-  projects.push(new Project(ele));
-})
+ //object literals to set for types of fizzbuzzes
 
-//function that loops through the array to past to the html
-projects.forEach(function(a){
-  $('#projects').append(a.toHtml())
-});
+ //classic to be used with second button
+  var classic = {
+    fizz: 'FIZZ',
+    buzz: 'BUZZ'
+  };
+
+  var emoji = {
+    fizz: ' 🍾 ',
+    buzz: ' 🌩 '
+  };
+  var obj = emoji;
+  var f = obj.fizz;
+  var b = obj.buzz;
+
+ //function generating string based on external context
+  function appendToPage(callback) {
+    $('#results').append(callback);
+  }
+  var fizzBuzzLogic = function(num) {
+    var stringToPrint;
+    for (var i = 1; i < num; i++) {
+      if (i % 3 === 0 && i % 5 === 0) {
+        stringToPrint += f+b;
+      } else if (i % 3 === 0) {
+        stringToPrint += f;
+      } else if (i % 5 === 0) {
+        stringToPrint += b;
+      } else {
+        stringToPrint += (' ' + i + ' ');
+      };
+    };
+    return function(heresWhat) {
+      var message = 'Let\'s do it! ' + heresWhat + stringToPrint;
+      return message;
+    };
+  };
+
+  $('#action').on('click', function(){
+    console.log('🏟');
+    obj = emoji;
+    appendToPage(fizzBuzzLogic(50)('Here\'s emoji fizzbuzz: '));
+  });
+
+  //add in second button for fizzbuzz classic with different num and heresWhat
+
+
+
+  //wrapping rawData.sort and rawData.forEach
+  Project.loadAll = function(rawData) {
+    //sorts posts based on date - newest first
+    rawData.reduce(function(a,b) {
+      return (new Date(b.publishedOn)) - (new Date(a.publishedOn));
+    });
+    // //REFACORTED TO INCLUDE .MAP
+    // //function that fills the array
+    // rawData.forEach(function(ele) {
+    //   Project.all.push(new Project(ele));
+    // });
+    Project.all = rawData.map(function(item) {
+      return new Project(item);
+    });
+
+  };
+
+
+  Project.fetchAll = function(fetchAllCallback) {
+    if (localStorage.portfolioData) {
+      Project.loadAll(JSON.parse(localStorage.portfolioData));
+      fetchAllCallback();
+    } else {
+      $.getJSON('../data/data.json', function(portfolioData) {
+        Project.loadAll(portfolioData);
+        localStorage.portfolioData = JSON.stringify(portfolioData);
+        fetchAllCallback();
+      });
+    }
+  };
+
+  Project.initIndexPage = function() {
+    //function that loops through the array to paste to the html
+    Project.all.forEach(function(a) {
+      $('#projects').append(a.toHtml());
+    });
+  };
+
+
+  // // calling the function
+  // Project.fetchAll();
+
+  module.Project = Project;
+}) (window);
