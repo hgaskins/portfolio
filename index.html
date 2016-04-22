@@ -7,7 +7,7 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Hannah Gaskins</title>
 
-    <!-- Bootstrap -->
+    <!-- ============= Bootstrap Applied on this site ================== -->
     <link href="css/bootstrap.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
     <script src="https://use.typekit.net/czy0zdg.js"></script>
@@ -17,29 +17,23 @@
     <link rel="stylesheet" href="css/module.css">
     <link rel="stylesheet" href="css/theme.css">
 
+    <!-- =============== Portfolio Templating ================= -->
     <script id="portfolioTemplate" type="text/x-handlebars-template">
-
       <article class="col-md-4" data-category="cat">
         <header>
           <a href="{{urlToSite}}"><h1>{{title}}</h1></a>
           <h3>{{tagline}}</h3>
           <a href="{{urlToSite}}"><img src="{{imgSRC}}" alt=""/></a>
-          <!-- <div class="byline">
-            Link <address><a href="{{urlToSite}}">To Site</a></address>
-          </div> -->
         </header>
         <section class="projectDescription">{{{description}}}</section>
       </article>
-
     </script>
-
   </head>
   <body>
-        <!-- ============= navigation ================== -->
 
+    <!-- ============= navigation ================== -->
         <nav class="navbar navbar-default main-nav">
           <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                 <span class="sr-only">Toggle navigation</span>
@@ -50,7 +44,6 @@
               <a class="navbar-brand" href="index.html">Hannah Gaskins</a>
             </div>
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav">
                   <li class="dropdown">
@@ -137,16 +130,12 @@
             </div>
         </div>
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
-    <!-- <script type="text/javascript" src="js/projects.js"></script> -->
     <script type="text/javascript" src="js/projectsTemplate.js"></script>
     <script src="js/portfolioView.js" ></script>
     <script src="js/bootstrap.min.js"></script>
     <script>
-      // calling the function
       Project.fetchAll(Project.initIndexPage);
     </script>
   </body>
