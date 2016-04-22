@@ -43,10 +43,11 @@
   var f = obj.fizz;
   var b = obj.buzz;
 
- //function generating string based on external context
   function appendToPage(callback) {
     $('#results').append(callback);
   }
+  //function generating string based on external context
+
   var fizzBuzzLogic = function(num) {
     var stringToPrint;
     for (var i = 1; i < num; i++) {
@@ -73,7 +74,11 @@
   });
 
   //add in second button for fizzbuzz classic with different num and heresWhat
-
+  // $('#actionTwo').on('click', function(){
+  //   console.log('🍋');
+  //   obj = emoji;
+  //   appendToPage(fizzBuzzLogic(30)('Here\'s emoji fizzbuzz: '));
+  // });
 
 
   //wrapping rawData.sort and rawData.forEach
