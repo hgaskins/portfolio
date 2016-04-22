@@ -36,8 +36,8 @@
   };
 
   var emoji = {
-    fizz: '🍾 ',
-    buzz: '🌩'
+    fizz: ' 🍾 ',
+    buzz: ' 🌩 '
   };
   var obj = emoji;
   var f = obj.fizz;
@@ -61,7 +61,7 @@
       };
     };
     return function(heresWhat) {
-      var message = 'Let\'s do it!' + heresWhat + stringToPrint;
+      var message = 'Let\'s do it! ' + heresWhat + stringToPrint;
       return message;
     };
   };
@@ -69,10 +69,10 @@
   $('#action').on('click', function(){
     console.log('🏟');
     obj = emoji;
-    appendToPage(fizzBuzzLogic(50)('Here\'s emoji fizzbuzz:'));
+    appendToPage(fizzBuzzLogic(50)('Here\'s emoji fizzbuzz: '));
   });
 
-  //add in second button for fizzbuzz classic
+  //add in second button for fizzbuzz classic with different num and heresWhat
 
 
 
