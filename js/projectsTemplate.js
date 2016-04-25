@@ -28,7 +28,6 @@
  // +++++++++++++++++ fizzbuzz +++++++++++++++++++
 
  //object literals to set for types of fizzbuzzes
-
  //classic to be used with second button
   var classic = {
     fizz: 'FIZZ',
@@ -41,7 +40,6 @@
   };
   var obj = [];
 
-
   $('#action').on('click', function(){
     obj = emoji;
     f = emoji.fizz;
@@ -49,7 +47,6 @@
     //calling a function that is passed as a parameter
     appendToPage(fizzBuzzLogic(50)('Here\'s emoji fizzbuzz: '));
   });
-
 
   $('#actionTwo').on('click', function(){
     console.log('🍋');
@@ -98,7 +95,6 @@
     Project.all = rawData.map(function(item) {
       return new Project(item);
     });
-
   };
 
 
