@@ -118,9 +118,5 @@
     });
   };
 
-
-  // // calling the function
-  // Project.fetchAll();
-
   module.Project = Project;
 }) (window);
