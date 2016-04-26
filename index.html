@@ -28,6 +28,21 @@
         <section class="projectDescription">{{{description}}}</section>
       </article>
     </script>
+
+    <!-- ============= Repo Display Section ================== -->
+    <script id="repo-template" type="text/x-handlebars-template">
+      <li>
+        <a href="{{html_url}}" target="_blank"><h3>{{name}}</h3></a>
+        <p>Description: {{description}}</p>
+        <p>Language: {{language}}</p>
+        <p>Created: {{created_at}}</p>
+        <p>Last updated: {{updated_at}}</p>
+        {{#if watchers_count}}
+          <p>{{watchers_count}} watching this repo</p>
+        {{/if}}
+      </li>
+    </script>
+
   </head>
   <body>
 
@@ -79,6 +94,7 @@
         <div class="container">
             <div class="row">
                 <section id="projects" class="text-center"></section>
+                <section id="repoSection" class="text-center"></section>
             </div>
         </div>
 
@@ -143,11 +159,14 @@
     <script type="text/javascript" src="js/projectsTemplate.js"></script>
     <script src="/js/bootstrap.min.js"></script>
     <script src="/js/page.js"></script>
+    <script src="/js/githubToken.js"></script>
     <script src="/js/portfolioView.js" ></script>
     <script src="/js/homeController.js"></script>
     <script src="/js/portfolioController.js"></script>
     <script src="/js/aboutController.js"></script>
     <script src="/js/gameController.js"></script>
+    <script src="/js/repoView.js"></script>
+    <script src="/js/repo.js"></script>
     <script src="/js/routes.js"></script>
   </body>
 </html>
