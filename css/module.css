@@ -24,13 +24,17 @@
   color: inherit;
 }
 
-.jumbotron {
-
-}
-
 .meImg {
   height: auto;
   border-radius: 150px;
   height: 300px;
   width: 300px;
+}
+
+#game {
+  display: flex;
+}
+#results,
+#resultsTwo {
+  flex-direction: column;
 }

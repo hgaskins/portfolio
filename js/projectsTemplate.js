@@ -49,17 +49,20 @@
   });
 
   $('#actionTwo').on('click', function(){
-    console.log('🍋');
     obj = classic;
     f = classic.fizz;
     b = classic.buzz;
-    appendToPage(fizzBuzzLogic(30)('Here\'s emoji fizzbuzz: '));
+    appendToPageTwo(fizzBuzzLogic(30)('Here\'s classic fizzbuzz: '));
   });
 
   //
   function appendToPage(callback) {
     $('#results').append(callback);
   };
+
+  function appendToPageTwo(callback) {
+    $('#resultsTwo').append(callback)
+  }
   //function generating string based on external context
   var fizzBuzzLogic = function(num) {
     var stringToPrint;
