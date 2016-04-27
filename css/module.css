@@ -1,0 +1,40 @@
+.container {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.interestsIcons{
+    list-style: none;
+    display:flex;
+    padding: 10px;
+}
+
+.row {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.byline {
+  color: #777;
+}
+
+.byline a {
+  font-weight: bold;
+  text-decoration: none;
+  color: inherit;
+}
+
+.meImg {
+  height: auto;
+  border-radius: 150px;
+  height: 300px;
+  width: 300px;
+}
+
+#game {
+  display: flex;
+}
+#results,
+#resultsTwo {
+  flex-direction: column;
+}

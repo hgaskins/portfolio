@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Hannah Gaskins</title>
+
+    <!-- ============= Bootstrap Applied on this site ================== -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+    <script src="https://use.typekit.net/czy0zdg.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/module.css">
+    <link rel="stylesheet" href="css/theme.css">
+
+    <!-- =============== Portfolio Templating ================= -->
+    <script id="portfolioTemplate" type="text/x-handlebars-template">
+      <article class="col-md-4" data-category="cat">
+        <header>
+          <a href="{{urlToSite}}"><h1>{{title}}</h1></a>
+          <h3>{{tagline}}</h3>
+          <a href="{{urlToSite}}"><img src="{{imgSRC}}" alt=""/></a>
+        </header>
+        <section class="projectDescription">{{{description}}}</section>
+      </article>
+    </script>
+
+    <!-- ============= Repo Display Section ================== -->
+    <script id="repo-template" type="text/x-handlebars-template">
+      <li>
+        <a href="{{html_url}}" target="_blank"><h3>{{name}}</h3></a>
+        <p>Description: {{description}}</p>
+        <p>Language: {{language}}</p>
+        <p>Created: {{created_at}}</p>
+        <p>Last updated: {{updated_at}}</p>
+        {{#if watchers_count}}
+          <p>{{watchers_count}} watching this repo</p>
+        {{/if}}
+      </li>
+    </script>
+
+  </head>
+  <body>
+
+    <!-- ============= navigation ================== -->
+        <nav class="navbar navbar-default main-nav">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="/">Hannah Gaskins</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav">
+                  <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Menu <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                      <li class="portfolioLink"><a href="/portfolio">Portfolio</a></li>
+                      <li class="aboutLink"><a href="/about">About</a></li>
+                      <li role="separator" class="divider"></li>
+                      <li class="gameLink"><a href="/game">FizzBuzz</a></li>
+                    </ul>
+                  </li>
+              </ul>
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href="https://www.instagram.com/hnag409/"><i class="fa fa-instagram fa-2x"></i></a></li>
+                <li><a href="https://github.com/hnag409"><i class="fa fa-github-square fa-2x"></i></a></li>
+                <li><a href="https://twitter.com/hannahgaskins"><i class="fa fa-twitter-square fa-2x"></i></a></li>
+              </ul>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+
+        <!-- ============= jumbotron ==================== -->
+        <section class = "container text-center">
+          <div class = "jumbotron text-center">
+            <h1>Hannah Gaskins | Developer</h1>
+            <p class="text-center">Welcome to the site</p>
+            <p class="text-center">
+              <a class = "btn btn-primary btn-lg" role = "button" href="http://www.hannahgaskins.com/">Learn more</a>
+            </p>
+          </div>
+        </section>
+
+        <!-- ============= html section ================== -->
+        <div class="container">
+            <div class="row">
+                <section id="projects" class="text-center"></section>
+            </div>
+        </div>
+
+        <!-- ============= about section ================== -->
+        <div class="container text-center">
+            <div class="row">
+                <section id="about" class="tab-content col-md-12">
+                    <section>
+                      <h1>About:</h1>
+                      <img src="/img/me.jpg" alt="picture of me with dog" class="meImg"/>
+                      <p class="text-left">
+                          Motivated, self-starting,
+                          tech-loving, learner. Looking
+                          to make a positive impact on all
+                          projects and people I encounter.
+                          Engaged problem solver
+                          and communicator - both sides
+                          of my brain get regular use.
+                          Excited to start my next adventure
+                          and contribute to projects,
+                          collaborations, teams, and all
+                          around good vibes.<br><br>
+                          In my free time I enjoy epending time with
+                          my friends and family, yoga, biking, my dog
+                          and cat, and gettin' craftsy.
+                      </p>
+                    </section>
+                </section>
+            </div>
+        </div>
+        <!-- ============= github api repo section ================== -->
+
+        <div class="container">
+            <div class="row">
+                <section id="repoSection" class="text-left"></section>
+            </div>
+        </div>
+
+
+        <!-- ============= game section ================== -->
+        <header id="game"class="container text-center">
+          <div class="row">
+            <section class=".col-sm-12 gameSection">
+              <h1>FizzBuzz</h1>
+              <p>
+                FizzBuzz is a famous coding challenge used to learn about modulus and for loops. There are so many ways to do this, and coders come up with very unique ways to do so. Click the button to see my interpretation.
+              </p>
+              <button id="action" type="button" class="btn btn-info" data-type='🏟'>Emoji FizzBuzz To 50</button>
+              <span id="results"></span>
+              <!--  second button  -->
+              <button id="actionTwo" type="button" class="btn btn-info" data-type='🍋'>Classic FizzBuzz To 30</button>
+              <span id="resultsTwo"></span>
+            </section>
+
+          </div>
+        </header>
+
+        <!-- ============= footer ================== -->
+        <div class="navbar navbar-inverse navbar-fixed-bottom">
+            <div class="container">
+                <p class="footer-text navbar-text">
+                    Site Built by Hannah Gaskins
+                </p>
+            </div>
+        </div>
+
+    <!-- ============= scripts ================== -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
+    <script type="text/javascript" src="js/projectsTemplate.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/page.js"></script>
+    <script src="/js/portfolioView.js" ></script>
+    <script src="/js/homeController.js"></script>
+    <script src="/js/portfolioController.js"></script>
+    <script src="/js/aboutController.js"></script>
+    <script src="/js/gameController.js"></script>
+    <script src="/js/repoView.js"></script>
+    <script src="/js/repo.js"></script>
+    <script src="/js/routes.js"></script>
+  </body>
+</html>
