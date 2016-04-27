@@ -2,7 +2,7 @@
   var portfolioController = {};
   portfolioController.index = function() {
     $('#projects').show();
-    $('#repoSection').show();
+    $('#repoSection').hide();
     $('#about').hide();
     $('#game').hide();
   };

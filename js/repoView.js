@@ -3,10 +3,9 @@
 
   // DONE: Private methods declared here live only within the scope of the wrapping IIFE.
   var ui = function() {
-    var $about = $('#repoSection'); // Best practice: Cache the DOM query if it's used more than once.
+    var $repo = $('#repoSection'); // Best practice: Cache the DOM query if it's used more than once.
 
-    // $about.find('ul').empty();
-    $about.show();
+    $repo.show();
   };
   var repoTemplate = $('#repo-template').html();
   // DONE: Remember that new Handlebars template? Let's compile it!
