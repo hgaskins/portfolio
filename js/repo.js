@@ -4,19 +4,14 @@
   repos.all = [];
 
   repos.requestRepos = function(callback) {
-    // DONE: How would you like to fetch your repos? Don't forget to call the callback.
-    // Hint: What did you learn on Day 6? Use the method that lets you send a HEAD
     $.ajax({
-      url: 'https://api.github.com/user/repos',
-      method: 'GET',
-      headers: {Authorization: 'token ' + githubToken},
-      success: function(data) {
+      url: '/github/user/repos',
+      type: 'GET',
+      // headers: { 'Authorization': 'token ' + githubToken },
+      success: function(data, message, xhr) {
         repos.all = data;
-        repos.all = repos.with('description');
-        callback();
       }
-    }
-  );
+    }).done(callback);
   };
 
   // DONE: Model method that filters the full collection for repos with a particular attribute.
