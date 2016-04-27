@@ -30,3 +30,7 @@ p {
 a:hover {
     text-decoration: none;
 }
+
+ul > li {
+  text-decoration: none;
+}
