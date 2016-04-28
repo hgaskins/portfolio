@@ -36,3 +36,11 @@ Refactor and HOF Day
 * Adding a HOF today that will print off emojis instead of FizzBuzz
 * To test this I will go in incremental steps. First I will write the FizzBuzz logic and print to the console. Next I will add a button the the page and print to the console with an event handler. Next I will print to the DOM with that given event handler. From there I will introduce the HOF code.
 * A next step is to add in a second button
+
+Day 13 Heroku
+-------------
+[Live Heroku site URL](http://heroku-hannahs-portfolio.herokuapp.com/)
+
+and
+
+[pdx.ninja](pdx.ninja)
