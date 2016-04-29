@@ -27,46 +27,15 @@
 
  // +++++++++++++++++ fizzbuzz +++++++++++++++++++
 
- //object literals to set for types of fizzbuzzes
- //classic to be used with second button
-  var classic = {
-    fizz: 'FIZZ',
-    buzz: 'BUZZ'
-  };
-
   var emoji = {
     fizz: ' 🍾 ',
     buzz: ' 🌩 '
   };
   var obj = [];
-
-  $('#action').on('click', function(){
-    obj = emoji;
-    f = emoji.fizz;
-    b = emoji.buzz;
-    //calling a function that is passed as a parameter
-    appendToPage(fizzBuzzLogic(50)('Here\'s emoji fizzbuzz: '));
-  });
-
-  $('#actionTwo').on('click', function(){
-    obj = classic;
-    f = classic.fizz;
-    b = classic.buzz;
-    appendToPageTwo(fizzBuzzLogic(30)('Here\'s classic fizzbuzz: '));
-  });
-
-  //
-  function appendToPage(callback) {
-    $('#results').append(callback);
-  };
-
-  function appendToPageTwo(callback) {
-    $('#resultsTwo').append(callback)
-  }
-  //function generating string based on external context
-  var fizzBuzzLogic = function(num) {
+  
+  var fizzBuzzLogic = function() {
     var stringToPrint;
-    for (var i = 1; i < num; i++) {
+    for (var i = 1; i <= 50 ; i++) {
       if (i % 3 === 0 && i % 5 === 0) {
         stringToPrint += f+b;
       } else if (i % 3 === 0) {
@@ -77,12 +46,15 @@
         stringToPrint += (' ' + i + ' ');
       };
     };
-    //function that is used in appendToPage and passed as a param
-    return function(heresWhat) {
-      var message = 'Let\'s do it! ' + heresWhat + stringToPrint;
-      return message;
-    };
+    return stringToPrint;
   };
+
+  $('button').one('click', function() {
+    obj = emoji;
+    f = emoji.fizz;
+    b = emoji.buzz;
+    $('#results').append(fizzBuzzLogic());
+  });
 
   //wrapping rawData.sort and rawData.forEach
   Project.loadAll = function(rawData) {
@@ -90,11 +62,7 @@
     rawData.reduce(function(a,b) {
       return (new Date(b.publishedOn)) - (new Date(a.publishedOn));
     });
-    // //REFACORTED TO INCLUDE .MAP
-    // //function that fills the array
-    // rawData.forEach(function(ele) {
-    //   Project.all.push(new Project(ele));
-    // });
+
     Project.all = rawData.map(function(item) {
       return new Project(item);
     });
